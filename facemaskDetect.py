@@ -53,6 +53,10 @@ class FacemaskDetect:
         print(f'Restore facemask model time: {time.time() - d}s')
 
     def detect(self,img):
+        '''
+        :param img: Ảnh khuôn mặt đã được cắt, định dạng RGB
+        :return : Kết quả nhận dạng và độ chính xác
+        '''
         img = cv2.resize(img, (self.model_shape[2],self.model_shape[1]))
         img = np.expand_dims(img,axis=0)
 
